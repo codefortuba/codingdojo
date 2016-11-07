@@ -15,13 +15,13 @@ function tratarNumero(valor, tipoNumero) {
   var valorEmInteiro = parseInt(valor);
   if (valorEmInteiro > 0){
     var valorDecimalInt = valorEmInteiro;
-    var and = ' e '; 
+    var and = ' e ';
 
     if (tipoNumero == 'real') {
-      unidadeMonetaria = valorDecimalInt > 1 ? 'reais' : 'real';
+      unidadeMonetaria = tratarUnidadeMonetaria(valorDecimalInt, 'real', 'reais');
       real = true;
     } else {
-      unidadeMonetaria = valorDecimalInt > 1 ? 'centavos' : 'centavo';
+      unidadeMonetaria = tratarUnidadeMonetaria(valorDecimalInt, 'centavo', 'centavos');
     }
 
     var unidade = arrayUnidade[valorDecimalInt];
@@ -45,6 +45,10 @@ function tratarNumero(valor, tipoNumero) {
 
 function tratarReais(reais) {
   return tratarNumero(reais, 'real');
+}
+
+var tratarUnidadeMonetaria = function(valor, unidadeMonetaria, unidadeMonetariaPlural) {
+  return valor > 1 ? unidadeMonetariaPlural : unidadeMonetaria;
 }
 
 var converteValorEmExtenso = function(valor) {
