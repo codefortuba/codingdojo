@@ -51,13 +51,20 @@ var tratarUnidadeMonetaria = function(valor, unidadeMonetaria, unidadeMonetariaP
   return valor > 1 ? unidadeMonetariaPlural : unidadeMonetaria;
 }
 
+var retornaReais = function(valor) {
+  return valor.split(',')[0];
+}
+var retornaCentavos = function(valor) {
+  return valor.split(',')[1];
+}
+
 var converteValorEmExtenso = function(valor) {
   var arrayValores = valor.split(',');
 
   var valorPorExtenso = '';
 
-  var reais = arrayValores[0]; 
-  var centavos = arrayValores[1]; 
+  var reais = retornaReais(valor); 
+  var centavos = retornaCentavos(valor); 
   var reaisInt = parseInt(reais);
   var centavosInt = parseInt(centavos);
 
