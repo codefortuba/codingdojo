@@ -1,3 +1,5 @@
+![alt tag](https://github.com/gefymarcos/codingdojo/blob/master/codefortuba.png)
+
 # codingdojo
 Repositório dos problemas realizados em nossos coding dojo em Tubarão/SC
 
